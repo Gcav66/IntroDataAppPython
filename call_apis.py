@@ -9,7 +9,18 @@ import twitter
 import pandas as pd
 import requests
 import json
-from constants import *
+import os
+
+try:
+  from constants import *
+except ImportError:
+  WATSON_URL = os.environ['WATSON_URL']
+  WATSON_USERNAME = os.environ['WATSON_USERNAME']
+  WATSON_PASSWORD = os.environ['WATSON_PASSWORD']
+  TWITTER_CONSUMER_KEY = os.environ['TWITTER_CONSUMER_KEY']
+  TWITTER_CONSUMER_SECRET = os.environ['TWITTER_CONSUMER_SECRET']
+  TWITTER_ACCESS_TOKEN_KEY = os.environ['TWITTER_ACCESS_TOKEN_KEY']
+  TWITTER_ACCESS_TOKEN_SECRET = os.environ['TWITTER_ACCESS_TOKEN_SECRET']
 
     
 def call_watson(mydf):

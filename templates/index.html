@@ -1,0 +1,67 @@
+ <!doctype html>
+ <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<title>Cognify Celebs</title>
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
+  <link href="static/bootstrap.min.css" rel="stylesheet">
+  <!--<link href="static/css/main.css" rel="stylesheet">-->
+
+ </head>
+
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-mid-1">
+        <h1>Let Watson Compare Celebrity Personalities via Twitter</h1>
+      </div>
+      <form action="" method=post>
+        <div class="form-group">
+          <label for="sel1">Pick Two Celebrities</label>
+          <select multiple class="form-control" id="sel1" size="2" name="celeb">
+            <option>realDonaldTrump</option>
+            <option>kanyewest</option>
+            <option>HillaryClinton</option>
+          </select>
+        </div>
+        <button type="submit" name = 'btn' value="display" class="btn btn-default">Display Tabular Results</button>
+        <button type="submit" name = 'btn' value="download" class="btn btn-default">Download Results</button>
+        <button type="submit" name = 'btn' value="graph" class="btn btn-default">Graph Results</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <!--<h2 class="section-heading">Results</h2>-->
+              <h3 class="section-subheading text-muted">{{flat | safe}}</h3>
+
+          </div>
+      </div>
+  </div>
+
+
+  <div id={{ chartID|safe }} class="chart" style="height: 100px; width: 500px"></div>
+    <script>
+      var chart_id = {{ chartID|safe }}
+      var series = {{ series|safe }}
+      var title = {{ title|safe }}
+      var xAxis = {{ xAxis|safe }}
+      var yAxis = {{ yAxis|safe }}
+      var chart = {{ chart|safe }}
+    </script>
+
+  <!--<script
+        src="https://code.jquery.com/jquery-3.0.0.min.js"
+        integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="
+        crossorigin="anonymous"></script>-->
+  <script
+        src="https://code.jquery.com/jquery-3.1.0.min.js"
+        integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+        crossorigin="anonymous"></script>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="static/run_chart.js"></script>
+
+</body>

@@ -3,3 +3,4 @@ Flask==0.11.1
 Requests==2.10.0
 python_twitter==3.1
 gunicorn==19.6.0
+openpyxl==2.3.2
